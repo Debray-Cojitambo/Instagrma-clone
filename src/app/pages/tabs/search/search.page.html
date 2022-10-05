@@ -1,0 +1,91 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar color="light"> 
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-item>
+    <ion-label class="titulo">Avatar</ion-label>
+    <ion-buttons slot="end">
+      <ion-button>
+        <label for="archivo">
+          <ion-icon name="add-circle-outline" slot="icon-only" style="color:rgb(8, 41, 255);"></ion-icon>
+        </label>
+        <input (change)="subirArchivo($event)" id="archivo" type="file" accept="image/*" style="display:none;">
+      </ion-button>
+    </ion-buttons>
+  </ion-item>
+  <img [src]="newImage" alt="" style="width:100%;">
+
+  <ion-item>
+    <ion-label class="normal" position="floating">Nombre:</ion-label>
+    <ion-input
+      class="normal"
+      [(ngModel)]="newPost.username"
+      type="text"
+      inputmode="text"
+    ></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label class="normal" position="floating">Ubicacion:</ion-label>
+    <ion-input
+      class="normal"
+      [(ngModel)]="newPost.location"
+      type="text"
+      inputmode="text"
+    ></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label class="titulo">Video</ion-label>
+    <ion-buttons slot="end">
+      <ion-button>
+        <label for="archivo">
+          <ion-icon name="add-circle-outline" slot="icon-only" style="color:rgb(8, 41, 255);"></ion-icon>
+        </label>
+        <input (change)="subirArchivo($event)" id="archivo" type="file" accept="image/*" style="display:none;">
+      </ion-button>
+    </ion-buttons>
+  </ion-item>
+  <img [src]="newImage" alt="" style="width:100%;">
+
+  <ion-item>
+    <ion-label class="normal" position="floating">Descripcion:</ion-label>
+    <ion-input
+      class="normal"
+      [(ngModel)]="newPost.description"
+      type="text"
+      inputmode="text"
+    ></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label class="titulo">Foto</ion-label>
+    <ion-buttons slot="end">
+      <ion-button>
+        <label for="archivo">
+          <ion-icon name="add-circle-outline" slot="icon-only" style="color:rgb(8, 41, 255);"></ion-icon>
+        </label>
+        <input (change)="subirArchivo($event)" id="archivo" type="file" accept="image/*" style="display:none;">
+      </ion-button>
+    </ion-buttons>
+  </ion-item>
+  <img [src]="newImage" alt="" style="width:100%;">
+
+  <ion-button style="margin:30px;"  (click)=" guardarPost()">Siguiente</ion-button>
+
+  <ion-item *ngFor="let estado of estados" class="normal">
+    <ion-list>
+      <ion-label>{{post.logo }}</ion-label>
+      <ion-label>{{post.username}}</ion-label>
+      <ion-label>{{post.location}}</ion-label>
+      <ion-label>{{post.description}}</ion-label>
+      <ion-label>{{post.image}}</ion-label>
+
+
+    </ion-list>
+  </ion-item>
+    
+
+</ion-content>
